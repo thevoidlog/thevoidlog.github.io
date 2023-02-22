@@ -1,0 +1,1 @@
+# thevoidlog.github.io
