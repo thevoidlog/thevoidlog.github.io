@@ -1,0 +1,4 @@
+baseURL = 'https://thevoidlog.com/'
+languageCode = 'en-us'
+title = 'The Void Log'
+theme = "black-and-light"
