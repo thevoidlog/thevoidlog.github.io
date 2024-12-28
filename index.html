@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Void Log - For Sale</title>
+    <style>
+        body {
+            background-color: black;
+            color: lime;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            overflow: hidden;
+            height: 100vh; /* Full height */
+        }
+
+        h1 {
+            font-size: 4em;
+            text-shadow: 0 0 20px lime, 0 0 30px lime;
+            margin-bottom: 20px;
+            position: relative; /* Keep the heading above the rain */
+            z-index: 1; /* Ensure heading is above rain */
+        }
+
+        p {
+            font-size: 1.5em;
+            text-shadow: 0 0 10px lime, 0 0 20px lime;
+            position: relative;
+            z-index: 1; /* Ensure text is above rain */
+        }
+
+        .button {
+            background-color: lime;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-top: 40px; /* Space above the button */
+            display: inline-block;
+            position: relative;
+            z-index: 1; /* Ensure button is above rain */
+        }
+
+        .button:hover {
+            background-color: darkgreen;
+            color: white;
+        }
+
+        .matrix {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0; /* Below other content */
+        }
+
+        .matrix div {
+            color: lime;
+            font-size: 1.5em;
+            white-space: nowrap;
+            position: absolute;
+            top: -10%; /* Start just above the viewport */
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh); /* Move to the bottom of the viewport */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="matrix"></div>
+    <h1>The Void Log</h1>
+    <p>Your gateway to the unknown.</p>
+    <p>Unlock endless possibilities with this unique domain.</p>
+    <p><strong>Perfect for blogs, tech startups, or creative ventures.</strong></p>
+    <a class="button" href="mailto:buydomain@thevoidlog.com">Inquire Now</a>
+
+    <script>
+        const matrix = document.querySelector('.matrix');
+        const characters = '10';
+        const numDrops = 150; // Number of rain drops
+
+        for (let i = 0; i < numDrops; i++) {
+            const drop = document.createElement('div');
+            drop.textContent = characters.charAt(Math.floor(Math.random() * characters.length));
+            drop.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            drop.style.animationDuration = (Math.random() * 3 + 2) + 's'; // Duration between 2s and 5s
+            drop.style.fontSize = (Math.random() * 1.5 + 1) + 'em'; // Varying font size
+            matrix.appendChild(drop);
+        }
+    </script>
+</body>
+</html>
